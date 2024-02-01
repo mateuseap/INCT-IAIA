@@ -1,8 +1,8 @@
 {
-  "name": "inct-iaia.github.io",
+  "name": "inct-iaia.vercel.app",
   "private": true,
   "version": "0.0.1",
-  "homepage": "inct-iaia.github.io",
+  "homepage": "inct-iaia.vercel.app",
   "type": "module",
   "scripts": {
     "dev": "vite",
