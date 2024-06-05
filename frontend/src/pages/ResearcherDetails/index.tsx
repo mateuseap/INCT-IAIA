@@ -1,4 +1,4 @@
-import { NavLink, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
 import { IResearcherDetails } from "../../types";
@@ -7,10 +7,7 @@ import { useQuery } from "@tanstack/react-query";
 import { formatImageUrl } from "../../utils";
 import ProfilePicPlaceholder from "../../assets/profile-pic-placeholder.jpg";
 import { useState } from "react";
-import {
-  ArrowUturnLeftIcon
-} from "@heroicons/react/24/outline";
-
+import { ArrowUturnLeftIcon } from "@heroicons/react/24/outline";
 
 export default function ResearcherDetails() {
   const { name } = useParams<{ name: string }>();
@@ -47,13 +44,14 @@ export default function ResearcherDetails() {
             />
           </div>
           <div className="mx-auto pt-4 px-8 sm:px-16">
-            <NavLink
-              to="/researchers"
+            <a
+              key={data?.name}
+              href="/researchers"
               className="flex items-center text-gray-700 hover:text-gray-900"
             >
               <ArrowUturnLeftIcon className="h-6 w-6" />
               <span className="ml-2 text-sm">Back to Researchers</span>
-            </NavLink>
+            </a>
           </div>
           {isLoading ? (
             <div className="mt-24">
