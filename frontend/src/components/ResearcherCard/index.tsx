@@ -3,6 +3,7 @@ import ProfilePicPlaceholder from "../../assets/profile-pic-placeholder.jpg";
 import LattesLogo from "../../assets/lattes-logo.svg";
 import { useState } from "react";
 import { formatImageUrl } from "../../utils";
+import { NavLink } from "react-router-dom";
 
 export default function ResearcherCard({
   id,
@@ -24,6 +25,10 @@ export default function ResearcherCard({
       : truncatedText + "...";
   };
 
+  const parseResearcherName = (name: string) => {
+    return name.toLowerCase().replace(/\s/g, "-");
+  };
+
   return (
     <div className="w-full">
       <div className="max-w-sm mx-auto rounded-lg overflow-hidden shadow-md bg-white">
@@ -40,21 +45,11 @@ export default function ResearcherCard({
             alt={name}
           />
           {isHovered && id && (
-            <a
-              href={`http://lattes.cnpq.br/${id}`}
-              className="flex items-center"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <NavLink to={`/researchers/${parseResearcherName(name)}`}>
               <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center bg-white bg-opacity-50 text-black text-xl font-semibold">
-                <img
-                  src={LattesLogo}
-                  alt="Lattes Logo"
-                  className="w-8 h-8 mr-2"
-                />
-                Currículo Lattes
+                See More
               </div>
-            </a>
+            </NavLink>
           )}
         </div>
         <div className="p-6 flex flex-col justify-between h-52">
@@ -64,10 +59,23 @@ export default function ResearcherCard({
               {truncateText(resume_text, 130)}
             </p>
           </div>
-          <div>
-            <span className="font-medium">Lattes ID:</span>{" "}
-            <span className="text-blue-500">{id}</span>
-          </div>
+          {id && (
+            <a
+              href={`http://lattes.cnpq.br/${id}`}
+              className="flex items-center"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div className="flex items-center text-gray-700">
+                <img
+                  src={LattesLogo}
+                  alt="Lattes Logo"
+                  className="w-8 h-8 mr-1"
+                />
+                Currículo Lattes
+              </div>
+            </a>
+          )}
         </div>
       </div>
     </div>
