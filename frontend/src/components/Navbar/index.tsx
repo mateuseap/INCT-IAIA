@@ -11,7 +11,7 @@ function Navbar() {
     { name: "About", href: "/about" },
     { name: "Institutions", href: "/institutions" },
     { name: "Researchers", href: "/researchers" },
-    { name: "Publications", href: "#" },
+    { name: "Publications", href: "/publications" },
   ];
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);

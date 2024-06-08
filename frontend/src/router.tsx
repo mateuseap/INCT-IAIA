@@ -5,6 +5,7 @@ import About from "./pages/About";
 import Institutions from "./pages/Institutions";
 import Researchers from "./pages/Researchers";
 import ResearcherDetails from "./pages/ResearcherDetails";
+import Publications from "./pages/Publications";
 
 const router = createBrowserRouter([
   { path: "/", element: <Home /> },
@@ -12,6 +13,7 @@ const router = createBrowserRouter([
   { path: "/institutions", element: <Institutions /> },
   { path: "/researchers", element: <Researchers /> },
   { path: "/researchers/:name", element: <ResearcherDetails /> },
+  { path: "/publications", element: <Publications /> },
 ]);
 
 export default router;
