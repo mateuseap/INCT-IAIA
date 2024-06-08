@@ -72,7 +72,9 @@ class JournalArticle:
         relevance_flag = dados_basicos.attrib.get("FLAG-RELEVANCIA")
         doi = dados_basicos.attrib.get("DOI")
         english_title = dados_basicos.attrib.get("TITULO-DO-ARTIGO-INGLES")
-        scientific_dissemination_flag = dados_basicos.attrib.get("FLAG-DIVULGACAO-CIENTIFICA")
+        scientific_dissemination_flag = dados_basicos.attrib.get(
+            "FLAG-DIVULGACAO-CIENTIFICA"
+        )
 
         detalhamento = article_element.find("DETALHAMENTO-DO-ARTIGO")
         journal = detalhamento.attrib.get("TITULO-DO-PERIODICO-OU-REVISTA")
@@ -84,7 +86,10 @@ class JournalArticle:
         end_page = detalhamento.attrib.get("PAGINA-FINAL")
         publication_location = detalhamento.attrib.get("LOCAL-DE-PUBLICACAO")
 
-        authors = [author.attrib.get("NOME-COMPLETO-DO-AUTOR") for author in article_element.findall("AUTORES")]
+        authors = [
+            author.attrib.get("NOME-COMPLETO-DO-AUTOR")
+            for author in article_element.findall("AUTORES")
+        ]
 
         return cls(
             production_sequence,

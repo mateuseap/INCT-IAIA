@@ -10,13 +10,16 @@ class Researcher:
         self.journal_articles = []
 
     def to_dict(self):
+        sorted_journal_articles = sorted(
+            self.journal_articles, key=lambda journal_article: journal_article.year, reverse=True
+        )
         return {
             "id": self.id,
             "name": self.name,
             "resume_text": self.resume_text,
             "profile_pic": self.profile_pic,
             "journal_articles": [
-                journal_article.to_dict() for journal_article in self.journal_articles
+                journal_article.to_dict() for journal_article in sorted_journal_articles
             ],
         }
 
