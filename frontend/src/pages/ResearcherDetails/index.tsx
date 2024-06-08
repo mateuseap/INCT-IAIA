@@ -8,6 +8,7 @@ import { formatImageUrl } from "../../utils";
 import ProfilePicPlaceholder from "../../assets/profile-pic-placeholder.jpg";
 import { useState } from "react";
 import { ArrowUturnLeftIcon } from "@heroicons/react/24/outline";
+import JournalArticle from "../../components/JournalArticle";
 
 export default function ResearcherDetails() {
   const { name } = useParams<{ name: string }>();
@@ -129,37 +130,8 @@ export default function ResearcherDetails() {
                               <div className="flex flex-col justify-center gap-y-6">
                                 {data.journal_articles
                                   .slice(0, publicationsToShow)
-                                  .map((journal_article, index) => (
-                                    <div
-                                      key={index}
-                                      className="bg-white p-4 rounded-lg shadow-md"
-                                    >
-                                      <h3 className="text-base sm:text-lg font-semibold text-gray-800">
-                                        {journal_article.title}
-                                      </h3>
-                                      <p className="text-gray-600 mt-1">
-                                        <strong>Authors:</strong>{" "}
-                                        {journal_article.authors.join(", ")}
-                                      </p>
-                                      {journal_article.journal && (
-                                        <p className="text-gray-600">
-                                          <strong>Journal:</strong>{" "}
-                                          {journal_article.journal}
-                                        </p>
-                                      )}
-                                      {journal_article.year && (
-                                        <p className="text-gray-600">
-                                          <strong>Year:</strong>{" "}
-                                          {journal_article.year}
-                                        </p>
-                                      )}
-                                      {journal_article.doi && (
-                                        <p className="text-gray-600">
-                                          <strong>DOI:</strong>{" "}
-                                          {journal_article.doi}
-                                        </p>
-                                      )}
-                                    </div>
+                                  .map((journal_article) => (
+                                    <JournalArticle key={journal_article.title} {...journal_article} />
                                   ))}
                               </div>
                               {data.journal_articles.length >

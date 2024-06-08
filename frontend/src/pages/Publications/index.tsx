@@ -3,19 +3,64 @@ import Footer from "../../components/Footer";
 import { useQuery } from "@tanstack/react-query";
 import Spinner from "../../components/Spinner";
 import { IJournalArticle } from "../../types";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import JournalArticle from "../../components/JournalArticle";
 
 export default function Publications() {
-  const { data, isLoading } = useQuery<Array<IJournalArticle>>({
-    queryKey: ["get-all-journal-articles", "GET"],
+  const [page, setPage] = useState(1);
+  const [stopRefetch, setStopRefetch] = useState(false);
+  const [allJournalArticles, setAllJournalArticles] = useState<
+    Array<IJournalArticle>
+  >([]);
+
+  const { data, isLoading, isError, refetch } = useQuery<
+    Array<IJournalArticle>
+  >({
+    queryKey: [`get-all-journal-articles?page=${page}`, "GET"],
     retry: false,
   });
 
-  const [publicationsToShow, setPublicationsToShow] = useState(6);
+  const observerRef = useRef(null);
 
-  const handleShowMore = () => {
-    setPublicationsToShow(publicationsToShow + 6);
-  };
+  useEffect(() => {
+    if (data) {
+      setAllJournalArticles((prevJournalArticles) => [
+        ...prevJournalArticles,
+        ...data,
+      ]);
+      if (data.length < 6) {
+        setStopRefetch(true);
+      }
+    }
+  }, [data]);
+
+  useEffect(() => {
+    if (stopRefetch) return;
+    refetch();
+  }, [page, refetch]);
+
+  useEffect(() => {
+    if (!isLoading && !isError && observerRef.current) {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          if (entries[0].isIntersecting && !isLoading && !isError) {
+            setPage((prevPage) => prevPage + 1);
+          }
+        },
+        { threshold: 0.1 }
+      );
+
+      observer.observe(observerRef.current);
+
+      return () => observer.disconnect();
+    }
+  }, [isLoading, isError]);
+
+  const content =
+    allJournalArticles &&
+    allJournalArticles.map((journal_article) => (
+      <JournalArticle key={journal_article.title} {...journal_article} />
+    ));
 
   return (
     <div className="flex flex-col min-h-screen bg-white">
@@ -36,57 +81,17 @@ export default function Publications() {
           </div>
           <div className="py-4 sm:py-8 text-center">
             <h1 className="lg:text-4xl text-2xl font-bold tracking-tight text-gray-900">
-              Publications
+              Researchers
             </h1>
           </div>
           <div className="flex flex-col justify-center items-center mx-auto gap-y-12 px-12 mb-12">
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-              {!isLoading &&
-                data &&
-                data.slice(0, publicationsToShow).map((journal_article, index) => (
-                  <div
-                    key={index}
-                    className="bg-white p-4 rounded-lg shadow-md"
-                  >
-                    <h3 className="text-base sm:text-lg font-semibold text-gray-800">
-                      {journal_article.title}
-                    </h3>
-                    <p className="text-gray-600 mt-1">
-                      <strong>Authors:</strong>{" "}
-                      {journal_article.authors.join(", ")}
-                    </p>
-                    {journal_article.journal && (
-                      <p className="text-gray-600">
-                        <strong>Journal:</strong>{" "}
-                        {journal_article.journal}
-                      </p>
-                    )}
-                    {journal_article.year && (
-                      <p className="text-gray-600">
-                        <strong>Year:</strong> {journal_article.year}
-                      </p>
-                    )}
-                    {journal_article.doi && (
-                      <p className="text-gray-600">
-                        <strong>DOI:</strong> {journal_article.doi}
-                      </p>
-                    )}
-                  </div>
-                ))}
+              {content}
             </div>
-            {data && data.length > publicationsToShow && (
-              <div className="mt-3 text-center">
-                <button
-                  className="text-blue-500 hover:underline"
-                  onClick={handleShowMore}
-                >
-                  See More
-                </button>
-              </div>
-            )}
-            {isLoading && <Spinner />}
+            {isLoading && !isError && !stopRefetch && <Spinner />}
           </div>
         </div>
+        <div ref={observerRef} />
       </main>
       <Footer />
     </div>

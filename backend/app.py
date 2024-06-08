@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, request
 from flask_cors import CORS
 from utils import (
     get_all_xml_files,
@@ -52,9 +52,16 @@ def get_researcher(name):
 
 @app.route("/get-all-journal-articles", methods=["GET"])
 def get_all_journal_articles_endpoint():
+    page = request.args.get("page", default=1, type=int)
     base_path = "data/researchers"
     all_journal_articles = get_all_journal_articles(base_path)
-    response_body = json.dumps(all_journal_articles, ensure_ascii=False).encode("ISO-8859-1")
+
+    start_index = (page - 1) * 12
+    end_index = start_index + 12
+
+    paginated_articles = all_journal_articles[start_index:end_index]
+
+    response_body = json.dumps(paginated_articles, ensure_ascii=False).encode("ISO-8859-1")
 
     return response_body, 200, {"Content-Type": "application/json; charset=ISO-8859-1"}
 
