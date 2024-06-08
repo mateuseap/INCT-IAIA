@@ -58,6 +58,23 @@ def parse_researcher_xml(file_path, all_info=False):
     return researcher
 
 
+def parse_journal_articles_from_xml(file_path):
+    parser = ET.XMLParser(encoding="ISO-8859-1")
+    tree = ET.parse(file_path, parser=parser)
+    root = tree.getroot()
+
+    article_elements = root.findall(".//ARTIGO-PUBLICADO")
+    journal_articles = [
+        JournalArticle.from_xml(article_element).to_dict()
+        for article_element in article_elements
+    ]
+    sorted_journal_articles = sorted(
+        journal_articles, key=lambda journal_article: journal_article["year"], reverse=True
+    )
+
+    return sorted_journal_articles
+
+
 def parse_researcher_name(name):
     return " ".join(
         [
@@ -89,3 +106,14 @@ def get_one_xml_file(base_path, name):
     xml_file = os.path.join(researcher_path, "curriculo.xml")
 
     return xml_file
+
+
+def get_all_journal_articles(base_path):
+    xml_files = get_all_xml_files(base_path)
+    all_journal_articles = []
+
+    for xml_file in xml_files:
+        journal_articles = parse_journal_articles_from_xml(xml_file)
+        all_journal_articles.extend(journal_articles)
+
+    return all_journal_articles
