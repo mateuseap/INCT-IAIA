@@ -11,7 +11,9 @@ class Researcher:
 
     def to_dict(self):
         sorted_journal_articles = sorted(
-            self.journal_articles, key=lambda journal_article: journal_article.year, reverse=True
+            self.journal_articles,
+            key=lambda journal_article: journal_article.year,
+            reverse=True,
         )
         return {
             "id": self.id,

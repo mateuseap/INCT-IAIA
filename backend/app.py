@@ -3,6 +3,7 @@ from flask_cors import CORS
 from utils import (
     get_all_xml_files,
     get_one_xml_file,
+    get_all_journal_articles,
     parse_researcher_xml,
     parse_researcher_name,
 )
@@ -45,6 +46,15 @@ def get_researcher(name):
     researcher = parse_researcher_xml(xml_file, all_info=True)
     researcher_dict = researcher.to_dict()
     response_body = json.dumps(researcher_dict, ensure_ascii=False).encode("ISO-8859-1")
+
+    return response_body, 200, {"Content-Type": "application/json; charset=ISO-8859-1"}
+
+
+@app.route("/get-all-journal-articles", methods=["GET"])
+def get_all_journal_articles_endpoint():
+    base_path = "data/researchers"
+    all_journal_articles = get_all_journal_articles(base_path)
+    response_body = json.dumps(all_journal_articles, ensure_ascii=False).encode("ISO-8859-1")
 
     return response_body, 200, {"Content-Type": "application/json; charset=ISO-8859-1"}
 
