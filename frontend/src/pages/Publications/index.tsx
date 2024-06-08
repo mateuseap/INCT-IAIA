@@ -81,7 +81,7 @@ export default function Publications() {
           </div>
           <div className="py-4 sm:py-8 text-center">
             <h1 className="lg:text-4xl text-2xl font-bold tracking-tight text-gray-900">
-              Researchers
+              Publications
             </h1>
           </div>
           <div className="flex flex-col justify-center items-center mx-auto gap-y-12 px-12 mb-12">
