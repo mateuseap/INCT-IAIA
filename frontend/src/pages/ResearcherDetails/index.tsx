@@ -75,7 +75,7 @@ export default function ResearcherDetails() {
                             alt={name}
                           />
                         </div>
-                        <h1 className="text-xl font-semibold tracking-tight text-gray-900 mt-4 text-center">
+                        <h1 className="text-xl font-semibold tracking-tight text-gray-900 mt-4 text-center w-80">
                           {data.name}
                         </h1>
                       </div>
@@ -101,7 +101,7 @@ export default function ResearcherDetails() {
                           alt={name}
                         />
                       </div>
-                      <h1 className="text-2xl font-semibold tracking-tight text-gray-900 mt-4 text-center">
+                      <h1 className="text-2xl font-semibold tracking-tight text-gray-900 mt-4 text-center w-80">
                         {data.name}
                       </h1>
                     </div>
