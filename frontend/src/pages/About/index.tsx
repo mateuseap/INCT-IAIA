@@ -94,7 +94,7 @@ export default function About() {
                 <div className="flex items-start gap-x-2 text-justify">
                   <span className="text-xl font-bold leading-none">•</span>
                   <span>
-                    <span className="font-bold">Responsibility:</span>
+                    <span className="font-bold">Responsibility:</span>{" "}
                     Prioritizing the ethical considerations and societal impacts
                     of AI.
                   </span>
