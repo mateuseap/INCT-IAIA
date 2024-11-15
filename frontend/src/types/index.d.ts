@@ -28,6 +28,12 @@ export interface IJournalArticle {
   publication_location?: string;
 }
 
+export interface IInstitutionCard {
+  name: string;
+  logoUrl: string;
+  website: string;
+}
+
 export interface IResearcherDetails extends IResearcherCard {
   journal_articles: IJournalArticle[];
 }

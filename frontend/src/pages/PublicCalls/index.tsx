@@ -1,11 +1,12 @@
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
+import { ArrowUpRightIcon } from "@heroicons/react/24/outline";
 
 export default function Institutions() {
   return (
     <div className="flex flex-col min-h-screen bg-white">
       <Navbar />
-      <main className="mt-12 isolate sm:mb-8 mb-14 flex-grow">
+      <main className="my-16 isolate sm:mb-8 flex-grow">
         <div className="relative pt-14">
           <div className="py-4 sm:py-8 text-center">
             <h1 className="lg:text-4xl text-2xl font-bold tracking-tight text-gray-900">
@@ -24,12 +25,22 @@ export default function Institutions() {
               Intelligence in Brazil.
             </span>
             <div className="font-bold lg:text-lg text-base flex flex-col gap-y-2">
-              <span className="flex gap-x-1 items-center">
-                • Public Call
-              </span>
-              <span className="flex gap-x-1 items-center">
-                • Final Result
-              </span>
+              <a
+                href="https://drive.google.com/file/d/1nflwsFrqdBPeZsYUow3sVUW9KfLzBsN4/view?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span className="flex gap-x-1 items-center">
+                  <ArrowUpRightIcon className="w-4 h-4" />
+                  Public Call
+                </span>
+              </a>
+              <a href="#">
+                <span className="flex gap-x-1 items-center">
+                  <ArrowUpRightIcon className="w-4 h-4" />
+                  Final Result
+                </span>
+              </a>
             </div>
           </div>
         </div>

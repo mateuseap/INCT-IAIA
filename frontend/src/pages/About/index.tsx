@@ -5,7 +5,7 @@ export default function About() {
   return (
     <div className="flex flex-col min-h-screen bg-white">
       <Navbar />
-      <main className="mt-12 isolate sm:mb-8 mb-14 flex-grow">
+      <main className="my-16 isolate sm:mb-8 flex-grow">
         <div className="relative pt-14">
           <div className="py-4 sm:py-8 text-center">
             <h1 className="lg:text-4xl text-2xl font-bold tracking-tight text-gray-900">
@@ -29,65 +29,76 @@ export default function About() {
               <h1 className="lg:text-xl text-lg font-bold tracking-tight">
                 Our Mission
               </h1>
-              <div className="flex flex-col gap-y-2 ml-4 text-justify">
-                <span className="flex gap-x-1">
-                  <span className="text-xl font-bold">•</span>Address the
-                  crucial challenges of integrating AI into various aspects of
-                  life, ensuring transparency, privacy, security,
+              <div className="flex flex-col gap-y-2 ml-4">
+                <div className="flex items-start gap-x-2 text-justify">
+                  <span className="text-xl font-bold leading-none">•</span>
+                  Address the crucial challenges of integrating AI into various
+                  aspects of life, ensuring transparency, privacy, security,
                   responsibility, reliability, fairness, and explainability.
-                </span>
-                <span className="flex gap-x-1">
-                  <span className="text-xl font-bold">•</span>
+                </div>
+                <div className="flex items-start gap-x-2 text-justify">
+                  <span className="text-xl font-bold leading-none">•</span>
                   Advocate for responsible AI by tackling technical challenges
                   such as complex data management, resilience against noise and
                   biases, and advancing innovative model architectures.
-                </span>
-                <span className="flex gap-x-1">
-                  <span className="text-xl font-bold">•</span>Highlight the
-                  importance of continuous data collection, integration, and
-                  professional training, ensuring readiness to navigate AI's
-                  rapidly evolving landscape.
-                </span>
-                <span className="flex gap-x-1">
-                  <span className="text-xl font-bold">•</span>Bridge the gap
-                  between theoretical AI models and practical applications,
-                  maximizing societal benefits and minimizing risks.
-                </span>
+                </div>
+                <div className="flex items-start gap-x-2 text-justify">
+                  <span className="text-xl font-bold leading-none">•</span>
+                  Highlight the importance of continuous data collection,
+                  integration, and professional training, ensuring readiness to
+                  navigate AI's rapidly evolving landscape.
+                </div>
+                <div className="flex items-start gap-x-2 text-justify">
+                  <span className="text-xl font-bold leading-none">•</span>
+                  Bridge the gap between theoretical AI models and practical
+                  applications, maximizing societal benefits and minimizing
+                  risks.
+                </div>
               </div>
             </div>
-            <div className="flex flex-col gap-y-2 text-left">
+            <div className="flex flex-col gap-y-4 text-left">
               <h1 className="lg:text-xl text-lg font-bold tracking-tight">
                 Our Values
               </h1>
               <div className="flex flex-col gap-y-2 ml-4">
-                <span className="flex items-center gap-x-1">
-                  <span className="text-xl font-bold">•</span>
-                  <span className="font-bold">Innovation:</span>
-                  Continuously pushing the boundaries of AI research.
-                </span>
-                <span className="flex items-center gap-x-1">
-                  <span className="text-xl font-bold">•</span>
-                  <span className="font-bold">Integrity:</span> Upholding
-                  transparency and honesty in every endeavor.
-                </span>
-                <span className="flex items-center gap-x-1">
-                  <span className="text-xl font-bold">•</span>
-                  <span className="font-bold">Collaboration:</span> Engaging
-                  diverse stakeholders, from government to the public, to ensure
-                  AI benefits everyone.
-                </span>
-                <span className="flex items-center gap-x-1">
-                  <span className="text-xl font-bold">•</span>
-                  <span className="font-bold">Excellence:</span>
-                  Striving for the highest standards in research, training, and
-                  application.
-                </span>
-                <span className="flex items-center gap-x-1">
-                  <span className="text-xl font-bold">•</span>
-                  <span className="font-bold">Responsibility:</span>
-                  Prioritizing the ethical considerations and societal impacts
-                  of AI.
-                </span>
+                <div className="flex items-start gap-x-2 text-justify">
+                  <span className="text-xl font-bold leading-none">•</span>
+                  <span>
+                    <span className="font-bold">Innovation:</span> Continuously
+                    pushing the boundaries of AI research.
+                  </span>
+                </div>
+                <div className="flex items-start gap-x-2 text-justify">
+                  <span className="text-xl font-bold leading-none">•</span>
+                  <span>
+                    <span className="font-bold">Integrity:</span> Upholding
+                    transparency and honesty in every endeavor.
+                  </span>
+                </div>
+                <div className="flex items-start gap-x-2 text-justify">
+                  <span className="text-xl font-bold leading-none">•</span>
+                  <span>
+                    <span className="font-bold">Collaboration:</span> Engaging
+                    diverse stakeholders, from government to the public, to
+                    ensure AI benefits everyone.
+                  </span>
+                </div>
+                <div className="flex items-start gap-x-2 text-justify">
+                  <span className="text-xl font-bold leading-none">•</span>
+                  <span>
+                    <span className="font-bold">Excellence:</span> Striving for
+                    the highest standards in research, training, and
+                    application.
+                  </span>
+                </div>
+                <div className="flex items-start gap-x-2 text-justify">
+                  <span className="text-xl font-bold leading-none">•</span>
+                  <span>
+                    <span className="font-bold">Responsibility:</span>
+                    Prioritizing the ethical considerations and societal impacts
+                    of AI.
+                  </span>
+                </div>
               </div>
             </div>
             <div className="flex flex-col gap-y-2 text-left">
@@ -114,67 +125,67 @@ export default function About() {
                 about the technology reshaping our world, IAIA welcomes you.
               </span>
             </div>
-            <div className="flex flex-col gap-y-2 text-left">
+            <div className="flex flex-col gap-y-4 text-left">
               <h1 className="lg:text-xl text-lg font-bold tracking-tight">
                 Governing Committee
               </h1>
               <div className="flex flex-col gap-y-2 ml-4">
-                <span className="flex gap-x-1">
-                  <span className="text-xl font-bold">•</span>
+                <div className="flex items-start gap-x-2 text-justify">
+                  <span className="text-xl font-bold leading-none">•</span>
                   <span className="flex flex-col">
                     Teresa Ludermir
                     <i>(UFPE, Coordinator)</i>
                   </span>
-                </span>
-                <span className="flex gap-x-1">
-                  <span className="text-xl font-bold">•</span>
+                </div>
+                <div className="flex items-start gap-x-2 text-justify">
+                  <span className="text-xl font-bold leading-none">•</span>
                   <span className="flex flex-col">
                     Cleber Zanchettin
                     <i>(UFPE, Executive Coordinator)</i>
                   </span>
-                </span>
-                <span className="flex gap-x-1">
-                  <span className="text-xl font-bold">•</span>
+                </div>
+                <div className="flex items-start gap-x-2 text-justify">
+                  <span className="text-xl font-bold leading-none">•</span>
                   <span className="flex flex-col">
                     Wagner Meira
                     <i>(UFMG, Vice-Coordinator)</i>
                   </span>
-                </span>
-                <span className="flex gap-x-1">
-                  <span className="text-xl font-bold">•</span>
+                </div>
+                <div className="flex items-start gap-x-2 text-justify">
+                  <span className="text-xl font-bold leading-none">•</span>
                   <span className="flex flex-col">
                     André Carvalho
                     <i>(USP, Vice-Coordinator)</i>
                   </span>
-                </span>
-                <span className="flex gap-x-1">
-                  <span className="text-xl font-bold">•</span>
+                </div>
+                <div className="flex items-start gap-x-2 text-justify">
+                  <span className="text-xl font-bold leading-none">•</span>
                   <span className="flex flex-col">
                     Altigran Silva
                     <i>(UFAM)</i>
                   </span>
-                </span>
-                <span className="flex gap-x-1">
-                  <span className="text-xl font-bold">•</span>
+                </div>
+                <div className="flex items-start gap-x-2 text-justify">
+                  <span className="text-xl font-bold leading-none">•</span>
                   <span className="flex flex-col">
                     Carmelo Bastos Filho
                     <i>(UPE)</i>
                   </span>
-                </span>
-                <span className="flex gap-x-1">
-                  <span className="text-xl font-bold">•</span>
+                </div>
+                <div className="flex items-start gap-x-2 text-justify">
+                  <span className="text-xl font-bold leading-none">•</span>
                   <span className="flex flex-col">
                     Francisco Carvalho
                     <i>(UFPE)</i>
                   </span>
-                </span>
-                <span className="flex gap-x-1">
-                  <span className="text-xl font-bold">•</span>
+                </div>
+                <div className="flex items-start gap-x-2 text-justify">
+                  <span className="text-xl font-bold leading-none">•</span>
                   <span className="flex flex-col">
                     Marley Vellasco
                     <i>(PUC-RJ)</i>
                   </span>
-                </span>
+                </div>
               </div>
             </div>
           </div>
