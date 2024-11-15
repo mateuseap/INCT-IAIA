@@ -51,7 +51,7 @@ function Footer() {
           </a>
         </div>
         <div className="text-center sm:text-right text-gray-900 w-full sm:w-auto">
-          &copy; 2024 National Institute of Artificial Intelligence.
+          &copy; 2024 Brazilian National Institute of Artificial Intelligence.
         </div>
       </div>
     </footer>
