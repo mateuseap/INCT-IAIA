@@ -1,5 +1,6 @@
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
+import { ArrowUpRightIcon } from "@heroicons/react/24/outline";
 
 export default function Institutions() {
   return (
@@ -24,12 +25,22 @@ export default function Institutions() {
               Intelligence in Brazil.
             </span>
             <div className="font-bold lg:text-lg text-base flex flex-col gap-y-2">
-              <span className="flex gap-x-1 items-center">
-                • Public Call
-              </span>
-              <span className="flex gap-x-1 items-center">
-                • Final Result
-              </span>
+              <a
+                href="https://drive.google.com/file/d/1nflwsFrqdBPeZsYUow3sVUW9KfLzBsN4/view?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span className="flex gap-x-1 items-center">
+                  <ArrowUpRightIcon className="w-4 h-4" />
+                  Public Call
+                </span>
+              </a>
+              <a href="#">
+                <span className="flex gap-x-1 items-center">
+                  <ArrowUpRightIcon className="w-4 h-4" />
+                  Final Result
+                </span>
+              </a>
             </div>
           </div>
         </div>
