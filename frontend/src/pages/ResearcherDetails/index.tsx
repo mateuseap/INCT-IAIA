@@ -30,7 +30,7 @@ export default function ResearcherDetails() {
   return (
     <div className="flex flex-col min-h-screen bg-white">
       <Navbar />
-      <main className="isolate flex-grow">
+      <main className="mt-16 isolate flex-grow">
         <div className="relative pt-14">
           <div className="mx-auto pt-4 px-8 sm:px-16">
             <a
