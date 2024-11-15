@@ -14,7 +14,7 @@ export default function About() {
               of Artificial Intelligence
             </h1>
           </div>
-          <div className="flex flex-col justify-center mx-auto max-w-4xl gap-y-6 px-4">
+          <div className="flex flex-col justify-center mx-auto max-w-4xl gap-y-6 px-8 lg:px-4">
             <div className="flex flex-col gap-y-2 text-left">
               <h1 className="lg:text-xl text-lg font-bold tracking-tight">
                 Our Vision
@@ -94,7 +94,7 @@ export default function About() {
                 <div className="flex items-start gap-x-2 text-justify">
                   <span className="text-xl font-bold leading-none">•</span>
                   <span>
-                    <span className="font-bold">Responsibility:</span>
+                    <span className="font-bold">Responsibility:</span>{" "}
                     Prioritizing the ethical considerations and societal impacts
                     of AI.
                   </span>

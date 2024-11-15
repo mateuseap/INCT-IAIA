@@ -49,7 +49,7 @@ export default function ResearcherDetails() {
           ) : (
             data && (
               <>
-                <div className="flex flex-col items-center mx-auto px-4 py-4 sm:py-8 sm:px-8 mb-12 justify-center">
+                <div className="flex flex-col items-center mx-auto px-8 pt-4 sm:pt-8 justify-center">
                   {data.resume_text ? (
                     <div className="w-full justify-center items-center flex flex-col sm:flex-row sm:items-start gap-8 max-w-6xl">
                       <div className="flex-shrink-0">
