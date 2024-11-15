@@ -188,7 +188,7 @@ export default function Institutions() {
               Institutions
             </h1>
           </div>
-          <div className="flex flex-col justify-center mx-auto max-w-6xl gap-y-6 px-4">
+          <div className="flex flex-col justify-center mx-auto max-w-6xl gap-y-6 px-8 lg:px-4">
             <div className="flex flex-col gap-y-4 text-left">
               <h1 className="lg:text-xl text-lg font-bold tracking-tight">
                 Host Institution
@@ -210,7 +210,7 @@ export default function Institutions() {
                 </span>
                 .
               </span>
-              <div className="flex items-center justify-center gap-6 mb-4 flex-col lg:flex-row px-12">
+              <div className="flex items-center justify-center gap-6 mb-4 flex-col lg:flex-row px-8 lg:px-12">
                 {hostInstitutions.map((institution) => (
                   <InstitutionCard
                     key={institution.name}
@@ -225,7 +225,7 @@ export default function Institutions() {
               <h1 className="lg:text-xl text-lg font-bold tracking-tight">
                 Brazilian Institutions
               </h1>
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 px-12">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 px-8 lg:px-12">
                 {brazilianInstitutions.map((institution) => (
                   <InstitutionCard
                     key={institution.name}
@@ -240,7 +240,7 @@ export default function Institutions() {
               <h1 className="lg:text-xl text-lg font-bold tracking-tight">
                 International Institutions
               </h1>
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 px-12">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 px-8 lg:px-12">
                 {internationalInstitutions.map((institution) => (
                   <InstitutionCard
                     key={institution.name}

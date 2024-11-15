@@ -69,7 +69,7 @@ export default function Researchers() {
               Researchers
             </h1>
           </div>
-          <div className="flex flex-col justify-center items-center mx-auto gap-y-12 px-12 mb-12">
+          <div className="flex flex-col justify-center items-center mx-auto gap-y-12 px-8 lg:px-12 mb-12">
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
               {content}
             </div>

@@ -13,7 +13,7 @@ export default function Institutions() {
               Public Calls
             </h1>
           </div>
-          <div className="flex flex-col justify-center mx-auto max-w-4xl gap-y-4 px-4">
+          <div className="flex flex-col justify-center mx-auto max-w-4xl gap-y-4 px-8 lg:px-4">
             <span className="lg:text-xl text-lg font-bold tracking-tight">
               Call INCT IAIA- 01/2023
             </span>

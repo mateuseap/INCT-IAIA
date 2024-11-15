@@ -8,7 +8,7 @@ export default function Home() {
       <main className="my-16 flex flex-col items-center justify-center flex-grow isolate sm:mb-8">
         <div className="relative pt-14">
           <div className="py-8 sm:py-14">
-            <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            <div className="mx-auto max-w-7xl px-8">
               <div className="mx-auto max-w-4xl text-center">
                 <h1 className="lg:text-6xl text-4xl font-bold tracking-tight text-gray-900">
                   Brazilian National Institute
