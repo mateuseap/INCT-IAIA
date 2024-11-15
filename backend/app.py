@@ -22,7 +22,7 @@ def hello_world():
 @app.route("/get-researchers/<int:page>", methods=["GET"])
 def get_researchers(page):
     all_xml_files = get_all_xml_files("data/researchers")
-    selected_xml_files = all_xml_files[(page - 1) * 6 : page * 6]
+    selected_xml_files = all_xml_files[(page - 1) * 8 : page * 8]
 
     if not selected_xml_files:
         return json.dumps({"error": "No researchers found."}), 404
