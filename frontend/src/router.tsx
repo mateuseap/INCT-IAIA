@@ -6,6 +6,7 @@ import Institutions from "./pages/Institutions";
 import Researchers from "./pages/Researchers";
 import ResearcherDetails from "./pages/ResearcherDetails";
 import Publications from "./pages/Publications";
+import PublicCalls from "./pages/PublicCalls";
 
 const router = createBrowserRouter([
   { path: "/", element: <Home /> },
@@ -14,6 +15,7 @@ const router = createBrowserRouter([
   { path: "/researchers", element: <Researchers /> },
   { path: "/researchers/:name", element: <ResearcherDetails /> },
   { path: "/publications", element: <Publications /> },
+  { path: "/public-calls", element: <PublicCalls /> },
 ]);
 
 export default router;
