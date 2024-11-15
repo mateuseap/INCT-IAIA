@@ -5,7 +5,7 @@ export default function Institutions() {
   return (
     <div className="flex flex-col min-h-screen bg-white">
       <Navbar />
-      <main className="mt-16 isolate sm:mb-8 mb-14 flex-grow">
+      <main className="my-16 isolate sm:mb-8 flex-grow">
         <div className="relative pt-14">
           <div className="py-4 sm:py-8 text-center">
             <h1 className="lg:text-4xl text-2xl font-bold tracking-tight text-gray-900">
