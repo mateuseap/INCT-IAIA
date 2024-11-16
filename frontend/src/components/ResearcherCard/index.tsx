@@ -55,7 +55,7 @@ export default function ResearcherCard({
               {truncateText(resume_text, 130)}
             </p>
           </div>
-          {id && (
+          {id && id.length > 1 && (
             <a
               href={`http://lattes.cnpq.br/${id}`}
               className="flex items-center"
@@ -71,6 +71,13 @@ export default function ResearcherCard({
                 Currículo Lattes
               </div>
             </a>
+          )}
+          {id && id.length === 1 && (
+            <div className="flex items-center mt-4">
+              <span className="inline-block bg-blue-500 text-white text-sm font-medium px-4 py-2 rounded-full shadow-md">
+                International Researcher
+              </span>
+            </div>
           )}
         </div>
       </div>
