@@ -13,7 +13,7 @@ export default function JournalArticle({
         {title}
       </h3>
       <p className="text-gray-600 mt-1">
-        <strong>Authors:</strong> {authors.join(", ")}
+        <strong>Authors:</strong> {authors}
       </p>
       {journal && (
         <p className="text-gray-600">

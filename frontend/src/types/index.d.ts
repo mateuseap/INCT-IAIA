@@ -7,7 +7,7 @@ export interface IResearcherCard {
 
 export interface IJournalArticle {
   title: string;
-  authors: string[];
+  authors: string;
   nature?: string;
   year?: string;
   country?: string;
