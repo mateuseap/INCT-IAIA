@@ -16,7 +16,7 @@ export default function Publications() {
   const { data, isLoading, isError, refetch } = useQuery<
     Array<IJournalArticle>
   >({
-    queryKey: [`get-all-journal-articles?page=${page}`, "GET"],
+    queryKey: [`get-journal-articles?page=${page}`, "GET"],
     retry: false,
   });
 

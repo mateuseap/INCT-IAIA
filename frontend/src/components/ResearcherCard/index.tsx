@@ -25,10 +25,6 @@ export default function ResearcherCard({
       : truncatedText + "...";
   };
 
-  const parseResearcherName = (name: string) => {
-    return name.toLowerCase().replace(/\s/g, "-");
-  };
-
   return (
     <div className="w-full">
       <div className="max-w-sm mx-auto rounded-lg overflow-hidden shadow-md bg-white">
@@ -45,7 +41,7 @@ export default function ResearcherCard({
             alt={name}
           />
           {isHovered && id && (
-            <NavLink to={`/researchers/${parseResearcherName(name)}`}>
+            <NavLink to={`/researchers/${id}`}>
               <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center bg-white bg-opacity-50 text-black text-xl font-semibold">
                 See More
               </div>

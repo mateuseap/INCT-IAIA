@@ -11,10 +11,10 @@ import { ArrowUturnLeftIcon } from "@heroicons/react/24/outline";
 import JournalArticle from "../../components/JournalArticle";
 
 export default function ResearcherDetails() {
-  const { name } = useParams<{ name: string }>();
+  const { id } = useParams<{ id: string }>();
 
   const { data, isLoading } = useQuery<IResearcherDetails>({
-    queryKey: [`get-researcher/${name}`, "GET"],
+    queryKey: [`get-researcher/${id}`, "GET"],
     retry: false,
   });
 
@@ -61,7 +61,7 @@ export default function ResearcherDetails() {
                                 ? formatImageUrl(data.profile_pic)
                                 : ProfilePicPlaceholder
                             }
-                            alt={name}
+                            alt={data.name}
                           />
                         </div>
                         <h1 className="text-xl font-semibold tracking-tight text-gray-900 mt-4 text-center w-80">
@@ -87,7 +87,7 @@ export default function ResearcherDetails() {
                               ? formatImageUrl(data.profile_pic)
                               : ProfilePicPlaceholder
                           }
-                          alt={name}
+                          alt={data.name}
                         />
                       </div>
                       <h1 className="text-2xl font-semibold tracking-tight text-gray-900 mt-4 text-center w-80">
