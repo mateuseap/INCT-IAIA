@@ -198,13 +198,9 @@ export default function Institutions() {
                 <span className="font-bold">
                   Federal University of Pernambuco (UFPE)
                 </span>
-                , located in Brazil, is a leading educational institution known
-                for its research and academic excellence. As part of UFPE, the{" "}
-                <span className="font-bold">Center of Informatics (CIn)</span>{" "}
-                stands out as a hub for innovation and research in information
-                technology and artificial intelligence. CIn is renowned for its
-                cutting-edge work in AI, computer science, and engineering, and
-                serves as the home for the{" "}
+                , through its{" "}
+                <span className="font-bold">Center for Informatics (CIn)</span>,
+                serves as the host institution for the{" "}
                 <span className="font-bold">
                   Brazilian National Institute of Artificial Intelligence (IAIA)
                 </span>
