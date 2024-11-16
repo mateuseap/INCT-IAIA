@@ -1,4 +1,5 @@
 import os
+import json
 import base64
 import xml.etree.ElementTree as ET
 from classes.journal_article import JournalArticle
@@ -63,13 +64,21 @@ def parse_journal_articles_from_xml(file_path):
     tree = ET.parse(file_path, parser=parser)
     root = tree.getroot()
 
+    researcher_id = root.attrib.get("NUMERO-IDENTIFICADOR")
     article_elements = root.findall(".//ARTIGO-PUBLICADO")
-    journal_articles = [
-        JournalArticle.from_xml(article_element).to_dict()
-        for article_element in article_elements
-    ]
+    journal_articles = []
+
+    for article_element in article_elements:
+        article = JournalArticle.from_xml(article_element)
+        article_dict = article.to_dict()
+
+        article_dict["researcher_id"] = researcher_id
+        journal_articles.append(article_dict)
+
     sorted_journal_articles = sorted(
-        journal_articles, key=lambda journal_article: journal_article["year"], reverse=True
+        journal_articles,
+        key=lambda journal_article: journal_article["year"],
+        reverse=True,
     )
 
     return sorted_journal_articles
@@ -117,3 +126,23 @@ def get_all_journal_articles(base_path):
         all_journal_articles.extend(journal_articles)
 
     return all_journal_articles
+
+
+def save_researchers_to_json():
+    all_xml_files = get_all_xml_files("data/researchers")
+
+    researchers = [parse_researcher_xml(file) for file in all_xml_files]
+    researchers_dict = [researcher.to_dict() for researcher in researchers]
+
+    output_file_path = "data/researchers.json"
+    with open(output_file_path, "w", encoding="utf-8") as json_file:
+        json.dump(researchers_dict, json_file, ensure_ascii=False, indent=4)
+
+
+def save_journal_articles_to_json():
+    base_path = "data/researchers"
+    all_journal_articles = get_all_journal_articles(base_path)
+
+    output_file_path = "data/journal_articles.json"
+    with open(output_file_path, "w", encoding="utf-8") as json_file:
+        json.dump(all_journal_articles, json_file, ensure_ascii=False, indent=4)
