@@ -196,10 +196,10 @@ export default function Institutions() {
               <span className="text-justify">
                 The{" "}
                 <span className="font-bold">
-                  Federal University of Pernambuco (UFPE)
+                  Universidade Federal de Pernambuco (UFPE)
                 </span>
                 , through its{" "}
-                <span className="font-bold">Center for Informatics (CIn)</span>,
+                <span className="font-bold">Centro de Informática (CIn)</span>,
                 serves as the host institution for the{" "}
                 <span className="font-bold">
                   Brazilian National Institute of Artificial Intelligence (IAIA)
