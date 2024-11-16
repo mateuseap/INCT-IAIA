@@ -22,12 +22,12 @@ function Navbar() {
   return (
     <header className="absolute inset-x-0 top-0 z-50 bg-[#004AAC]">
       <nav
-        className="flex items-center justify-between py-10 px-8"
+        className="flex items-center justify-between py-8 px-8"
         aria-label="Global"
       >
         <div className="flex lg:flex-1">
           <a href="/" className="-m-1.5 p-1.5 text-sm lg:text-base">
-            <img src={Logo} alt="IAIA Logo" draggable={false} className="h-8" />
+            <img src={Logo} alt="IAIA Logo" draggable={false} className="h-10" />
           </a>
         </div>
         <div className="flex lg:hidden">
@@ -61,10 +61,10 @@ function Navbar() {
         onClose={setMobileMenuOpen}
       >
         <div className="fixed inset-0 z-50" />
-        <Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-[#004AAC] px-8 py-10 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+        <Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-[#004AAC] px-8 py-8 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
             <a href="/" className="-m-1.5 p-1.5 text-sm lg:text-base">
-              <img src={Logo} alt="IAIA Logo" className="h-8" />
+              <img src={Logo} alt="IAIA Logo" className="h-10" />
             </a>
             <button
               type="button"
