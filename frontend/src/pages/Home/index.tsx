@@ -24,10 +24,10 @@ export default function Home() {
                   innovation. Beyond technology, IAIA prioritizes responsible
                   data practices and continuous professional training to advance
                   AI that benefits society while minimizing risks.
-                  <p className="mt-6 lg:text-xl text-base text-gray-600">
-                    <span className="font-bold">IAIA</span> is an effective
-                    research collaboration focused on Responsible AI.
-                  </p>
+                </p>
+                <p className="mt-6 lg:text-xl text-base text-gray-600 text-center">
+                  <span className="font-bold">IAIA</span> is an effective
+                  research collaboration focused on Responsible AI.
                 </p>
               </div>
             </div>
